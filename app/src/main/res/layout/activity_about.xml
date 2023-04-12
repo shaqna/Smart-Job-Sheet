@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".ui.about.AboutActivity">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/second_primary"
+        android:paddingStart="8dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:textSize="24sp"
+        android:paddingBottom="16dp"
+        android:text="INFO APLIKASI"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_layout_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="Smart Job Sheet merupakan aplikasi hasil produk dari penelitian “ Perancangan Job Sheet Instalasi Penerangan Listrik Sebagai Media Pembelajaran Praktikum Berbasis Android” yang dirancang dengan menggunakan software Smart Apps Creator yang merupakan alat bantu pembuat aplikasi mobile android dan iOS tanpa menggunakan Codding atau bahasa pemograman. Aplikasi ini masih terdapat kekurangan karena keterbatasan fitur yang disediakan software, namun diharapkan aplikasi ini mampu membantu peserta didik dan juga guru dalam menciptakan media pembelajaran yang inovatif mengikuti perkembangan teknologi dalam kehidupan yang mewabah pada dunia pendidikan. Aplikasi hanya dibangun untuk dapat diuji kelayakannya oleh ahli media dan ahli materi yang berasal dari guru SMKN Darul Kamal dan Dosen Pendidikan Teknik Elektro UIN Ar-Raniry. "
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

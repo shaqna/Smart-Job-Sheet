@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "662148680673",
+    "project_id": "smart-job-sheet",
+    "storage_bucket": "smart-job-sheet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662148680673:android:6451c058a78ed2adf160a0",
+        "android_client_info": {
+          "package_name": "com.maoungedev.smartjobsheet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662148680673-2rac3e4l2p8n644lsdon4emko98luo46.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1497GGyu__-t5Q0Loi6lN8CpvG5RaHDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662148680673-2rac3e4l2p8n644lsdon4emko98luo46.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
