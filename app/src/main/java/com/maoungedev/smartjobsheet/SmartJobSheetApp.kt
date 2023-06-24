@@ -5,9 +5,11 @@ import com.maoungedev.smartjobsheet.data.di.databaseModule
 import com.maoungedev.smartjobsheet.data.di.serviceModule
 import com.maoungedev.smartjobsheet.data.repository.PracticeRepositoryImpl
 import com.maoungedev.smartjobsheet.data.repository.QuizRepositoryImpl
+import com.maoungedev.smartjobsheet.data.repository.ScoreRepositoryImpl
 import com.maoungedev.smartjobsheet.data.sources.remote.service.JobSheetService
 import com.maoungedev.smartjobsheet.domain.usecase.PracticeInteractor
 import com.maoungedev.smartjobsheet.domain.usecase.QuizInteractor
+import com.maoungedev.smartjobsheet.domain.usecase.ScoreInteractor
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -25,10 +27,12 @@ class SmartJobSheetApp : Application() {
                     JobSheetService.inject(),
                     QuizRepositoryImpl.inject(),
                     PracticeRepositoryImpl.inject(),
+                    ScoreRepositoryImpl.inject(),
                     serviceModule,
                     databaseModule,
                     QuizInteractor.inject(),
-                    PracticeInteractor.inject()
+                    PracticeInteractor.inject(),
+                    ScoreInteractor.inject()
                 )
 
             )

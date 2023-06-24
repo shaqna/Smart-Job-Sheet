@@ -21,7 +21,8 @@ object DataMapper {
                     question = it.question,
                     answer = it.answer,
                     correctAnswer = it.correct_answer,
-                    collection = collection
+                    collection = collection,
+                    quizPicture = it.picture
                 )
             }
 
@@ -35,7 +36,8 @@ object DataMapper {
                     number = it.number,
                     question = it.question,
                     answer = it.answer,
-                    correctAnswer = it.correctAnswer
+                    correctAnswer = it.correctAnswer,
+                    quizPicture = it.quizPicture
                 )
             }
     }

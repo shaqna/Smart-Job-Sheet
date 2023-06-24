@@ -5,5 +5,6 @@ data class QuestionResponse(
     val number: Int = 0,
     val question: String = "",
     val answer: List<String> = listOf(),
-    val correct_answer: String = ""
+    val correct_answer: String = "",
+    val picture: String = ""
 )

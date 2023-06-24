@@ -4,6 +4,7 @@ import androidx.room.Room
 import com.maoungedev.smartjobsheet.data.sources.local.db.JobSheetDatabase
 import com.maoungedev.smartjobsheet.data.sources.remote.service.PracticeService
 import com.maoungedev.smartjobsheet.data.sources.remote.service.QuizService
+import com.maoungedev.smartjobsheet.data.sources.remote.service.ScoreService
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
@@ -27,4 +28,5 @@ val databaseModule = module {
 val serviceModule = module {
     factoryOf(::QuizService)
     factoryOf(::PracticeService)
+    factoryOf(::ScoreService)
 }

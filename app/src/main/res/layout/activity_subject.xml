@@ -19,7 +19,7 @@
         android:paddingTop="16dp"
         android:paddingEnd="8dp"
         android:paddingBottom="16dp"
-        android:text="SMART JOB SHEET"
+        android:text="@string/job_sheet"
         android:textSize="24sp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

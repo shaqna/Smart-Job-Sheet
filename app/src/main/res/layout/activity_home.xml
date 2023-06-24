@@ -20,7 +20,7 @@
         android:paddingEnd="8dp"
         android:textSize="24sp"
         android:paddingBottom="16dp"
-        android:text="SMART JOB SHEET"
+        android:text="@string/job_sheet"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,14 @@
                 android:text="MATERI"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="24dp"
+                app:srcCompat="@drawable/lamp" />
         </LinearLayout>
 
         <LinearLayout
@@ -103,7 +110,13 @@
                 android:text="PROSEDUR PRAKTIKUM"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="24dp"
+                app:srcCompat="@drawable/lamp" />
         </LinearLayout>
 
         <LinearLayout
@@ -138,7 +151,13 @@
                 android:text="KUIS"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="24dp"
+                app:srcCompat="@drawable/lamp" />
         </LinearLayout>
 
         <LinearLayout
@@ -173,7 +192,13 @@
                 android:text="INFO"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="24dp"
+                app:srcCompat="@drawable/lamp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

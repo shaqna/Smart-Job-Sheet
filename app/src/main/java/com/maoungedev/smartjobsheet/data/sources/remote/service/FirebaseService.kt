@@ -6,6 +6,7 @@ import com.maoungedev.smartjobsheet.data.sources.remote.response.FirebaseRespons
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.tasks.await
@@ -42,4 +43,16 @@ abstract class FirebaseService {
     }.catch {
         emit(FirebaseResponse.Error(it))
     }.flowOn(Dispatchers.IO)
+
+    inline fun <RequestType, reified ResponseType> setDocument(
+        collection: String,
+        docId: String,
+        document: RequestType
+    ): Flow<FirebaseResponse<ResponseType>> =
+        flow {
+            firestore.collection(collection).document(docId).set(document as Any).await()
+            emitAll(getDocument<ResponseType>(collection, docId))
+        }.catch {
+            emit(FirebaseResponse.Error(it))
+        }.flowOn(Dispatchers.IO)
 }

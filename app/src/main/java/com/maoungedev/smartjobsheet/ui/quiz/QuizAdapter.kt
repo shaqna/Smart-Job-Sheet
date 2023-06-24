@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.maoungedev.smartjobsheet.databinding.ItemQuestionBinding
 import com.maoungedev.smartjobsheet.domain.model.Question
 import com.maoungedev.smartjobsheet.utils.ButtonColor
@@ -46,6 +47,12 @@ class QuizAdapter : RecyclerView.Adapter<QuizAdapter.QuestionViewHolder>() {
 
             with(binding) {
 
+                if (item.quizPicture.isNotEmpty()) {
+                    Glide.with(itemView.context).load(item.quizPicture).into(ivQuestion)
+                } else {
+                    ivQuestion.visibility = View.GONE
+                    tvViewImage.visibility = View.GONE
+                }
                 tvQuestion.text = item.question.replace("\\n", "\n")
                 btnA.text = "A. ${item.answer[0]}"
                 btnB.text = "B. ${item.answer[1]}"
@@ -131,6 +138,7 @@ class QuizAdapter : RecyclerView.Adapter<QuizAdapter.QuestionViewHolder>() {
                         )
 
                     }
+
                     btnB -> {
                         btnA.backgroundTintList =
                             ContextCompat.getColorStateList(
@@ -151,6 +159,7 @@ class QuizAdapter : RecyclerView.Adapter<QuizAdapter.QuestionViewHolder>() {
                         )
 
                     }
+
                     btnC -> {
                         btnA.backgroundTintList =
                             ContextCompat.getColorStateList(
@@ -171,6 +180,7 @@ class QuizAdapter : RecyclerView.Adapter<QuizAdapter.QuestionViewHolder>() {
                         )
 
                     }
+
                     btnD -> {
                         btnA.backgroundTintList =
                             ContextCompat.getColorStateList(

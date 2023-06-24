@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Smart Job Sheet</string>
+    <string name="app_name">Job Sheet</string>
     <string name="practice_image">Practice Image</string>
+    <string name="job_sheet">JOB SHEET</string>
 </resources>

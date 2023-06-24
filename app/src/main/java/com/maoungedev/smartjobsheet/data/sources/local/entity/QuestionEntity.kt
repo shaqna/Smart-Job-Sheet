@@ -22,6 +22,9 @@ data class QuestionEntity(
     @ColumnInfo(name = "correctAnswer")
     val correctAnswer: String,
 
+    @ColumnInfo(name = "quizPicture")
+    val quizPicture: String,
+
     @ColumnInfo(name = "collection")
     var collection: String = ""
 )

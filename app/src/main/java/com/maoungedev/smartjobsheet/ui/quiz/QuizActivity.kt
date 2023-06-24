@@ -4,13 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.maoungedev.smartjobsheet.R
 import com.maoungedev.smartjobsheet.databinding.ActivityQuizBinding
+import com.maoungedev.smartjobsheet.databinding.DialogLayoutBinding
 import com.maoungedev.smartjobsheet.domain.model.Question
 import com.maoungedev.smartjobsheet.ui.home.HomeActivity
 import com.maoungedev.smartjobsheet.ui.score.ScoreActivity
@@ -63,9 +69,44 @@ class QuizActivity : AppCompatActivity() {
         loadKoinModules(QuizViewModel.inject())
         setContentView(binding.root)
 
+        showDialogFormName()
         setupViewPager()
+    }
+
+    private fun allowAccessQuiz() {
         fetchQuestions()
         observe()
+    }
+
+    private fun showDialogFormName() {
+        val materialBuilder = MaterialAlertDialogBuilder(this).create()
+        val inflater = DialogLayoutBinding.inflate(layoutInflater)
+
+        inflater.apply {
+            btnSend.setOnClickListener {
+                val name = inflater.edtName.text.toString()
+                if(name.isBlank()) {
+                    inflater.edtName.error = "Tidak boleh kosong"
+                } else {
+                    materialBuilder.dismiss()
+                    viewModel.setName(name)
+                    allowAccessQuiz()
+                }
+
+            }
+
+            btnBack.setOnClickListener {
+                materialBuilder.dismiss()
+                finish()
+            }
+        }
+
+
+        materialBuilder.apply {
+            setView(inflater.root)
+            setCancelable(false)
+            show()
+        }
     }
 
     private fun fetchQuestions() {
@@ -148,6 +189,7 @@ class QuizActivity : AppCompatActivity() {
                 Intent(this@QuizActivity, ScoreActivity::class.java)
             ).apply {
                 pointPreference.setPoint(viewModel.point)
+                pointPreference.setName(viewModel.studentName)
                 answerPreference.setList(viewModel.list)
             }.also {
                 finish()

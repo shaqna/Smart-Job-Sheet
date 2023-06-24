@@ -17,6 +17,8 @@ class QuizViewModel(
     private val quizUseCase: QuizUseCase
 ) : ViewModel() {
 
+
+
     private var quizCollection: String? = null
 
     private val _seconds = MutableLiveData<Int>()
@@ -26,6 +28,8 @@ class QuizViewModel(
     val onTimerFinish = _onTimerFinish
 
     var point = 0
+
+    var studentName = ""
 
     var list: ArrayList<String> = arrayListOf()
 
@@ -55,7 +59,11 @@ class QuizViewModel(
     }
 
     fun updatePoint() {
-        point += 10
+        point += 5
+    }
+
+    fun setName(newName: String) {
+        studentName = newName
     }
 
     private fun setLoading() {
@@ -95,6 +103,7 @@ class QuizViewModel(
                 }
         }
     }
+
 
     companion object {
         fun inject() = module {

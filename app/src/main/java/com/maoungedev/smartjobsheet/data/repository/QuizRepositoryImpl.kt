@@ -8,8 +8,13 @@ import com.maoungedev.smartjobsheet.data.sources.remote.response.FirebaseRespons
 import com.maoungedev.smartjobsheet.data.sources.remote.response.QuestionResponse
 import com.maoungedev.smartjobsheet.data.sources.remote.service.QuizService
 import com.maoungedev.smartjobsheet.domain.model.Question
+import com.maoungedev.smartjobsheet.domain.model.Student
 import com.maoungedev.smartjobsheet.domain.repository.QuizRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
@@ -37,6 +42,8 @@ class QuizRepositoryImpl(
             override fun shouldFetch(data: List<Question>?): Boolean = true
 
         }.asFlow()
+
+
 
     companion object {
         fun inject() = module {
